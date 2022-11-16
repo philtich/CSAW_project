@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <title> Counter Philipp Tichy </title>
+
+</head>
+<body>
+
+  <h1>Philipp Tichy Counter App</h1>
+  <div class="counter_container">
+    <button id="subtract" title="Bei 0 nicht klickbar">-</button><span id="output">0</span
+    ><button id="add">+</button>
+
+
+
+    <script>
+
+    let add = document.querySelector("#add");
+    let subtract = document.querySelector("#subtract");
+
+    add.addEventListener("click", function () {
+      let output = document.querySelector("#output");
+      let result = Number(output.innerText) + 1;
+
+      if (result > 0){
+        subtract.innerText ="-";
+      }
+
+      output.innerText = result;
+    });
+
+    subtract.addEventListener("click", function () {
+      let output = document.querySelector("#output");
+      let result = Number(output.innerText) - 1;
+
+      if (result < 0) {
+        result = 0;
+        window.alert ("Counter kann nicht kleiner als 0 sein!");
+        subtract.innerHTML = "<img src=\'https://cdn.pixabay.com/photo/2011/04/14/18/33/traffic-sign-6627_1280.png\'width=\'30px\' height=\'auto\'>";
+       }
+
+      output.innerText = result;
+    });
+
+</script>
+
+
+  </div>
+  </body>
+
+</html>
